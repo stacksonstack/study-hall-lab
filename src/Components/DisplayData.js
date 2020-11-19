@@ -14,4 +14,4 @@ class DisplayData extends Component {
   }
 }
 
-export default DisplayData
+export default DisplayData;

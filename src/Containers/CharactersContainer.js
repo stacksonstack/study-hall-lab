@@ -15,12 +15,26 @@ class CharactersContainer extends Component{
     renderCharacters=()=>{
         return this.state.api.map((el) => <Character key={el.id} character={el}/>)
     }
+
+    handleChange = (e) =>{
+        this.setState({    api: [...apiResponse, {name: this.name, img: this.img, show: this.show }]})
+    }
+    
     render(){
         return(
+            <>
             <div>
                 <h1>Index</h1>
                 {this.renderCharacters()}
             </div>
+            <div>
+            <Form
+              formData={this.state}
+              handleChange={this.handleChange}
+            />
+            <DisplayData formData={this.state} />
+          </div>
+          </>
         )
     }
 }
